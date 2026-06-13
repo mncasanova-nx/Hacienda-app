@@ -36,14 +36,37 @@ const CAMPOS = [
   {id:"la-envidia", nombre:"La Envidia"},
   {id:"guayascate", nombre:"Guayascate"},
 ];
-const LOTES_COMPARTIDOS = Array.from({length:24},(_,i)=>({
-  id:"lote-compartido-"+(i+1), nombre:"Lote "+(i+1), campoId:"compartido", compartido:true, tipo:"lote"
+const CORRALES_COMPARTIDOS = [
+  {id:"prado-corral-1",         nombre:"Corral 1",             campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"prado-corral-2",         nombre:"Corral 2",             campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"prado-corral-3",         nombre:"Corral 3",             campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"prado-corral-4",         nombre:"Corral 4",             campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"prado-corral-5",         nombre:"Corral 5",             campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"prado-corral-6",         nombre:"Corral 6",             campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"prado-vidriera-1",       nombre:"Vidriera 1",           campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"prado-vidriera-2",       nombre:"Vidriera 2",           campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"prado-vidriera-3",       nombre:"Vidriera 3",           campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"prado-vidriera-4",       nombre:"Vidriera 4",           campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"prado-encenada-10",      nombre:"Encenada del 10",      campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"prado-encenada-12",      nombre:"Encenada del 12",      campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"prado-encenada-13",      nombre:"Encenada del 13",      campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"prado-encenada-14",      nombre:"Encenada del 14",      campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"prado-encenada-18",      nombre:"Encenada del 18",      campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"prado-encenada-19",      nombre:"Encenada del 19",      campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"prado-represa",          nombre:"Corral de la Represa", campoId:"compartido", tipo:"corral", compartido:true},
+  {id:"compartido-corral-alto", nombre:"Corral del Alto",      campoId:"compartido", tipo:"corral", compartido:true},
+  ...Array.from({length:24}, (_,i) => ({
+    id:"lote-compartido-"+(i+1), nombre:"Lote "+(i+1), campoId:"compartido", tipo:"lote", compartido:true
+  })),
+];
+
+const CORRALES_GUAYASCATE = Array.from({length:6}, (_,i) => ({
+  id:"guayascate-lote-"+(i+1), nombre:"Lote "+(i+1), campoId:"guayascate", tipo:"lote", compartido:false
 }));
+
 const CORRALES_INICIALES = [
-  ...Array.from({length:12},(_,i)=>({id:"prado-corral-"+(i+1),   nombre:"Corral "+(i+1), campoId:"el-prado",   tipo:"corral", compartido:false})),
-  ...Array.from({length:12},(_,i)=>({id:"envidia-corral-"+(i+1), nombre:"Corral "+(i+1), campoId:"la-envidia", tipo:"corral", compartido:false})),
-  ...Array.from({length:6}, (_,i)=>({id:"guayascate-lote-"+(i+1),nombre:"Lote "+(i+1),   campoId:"guayascate", tipo:"lote",   compartido:false})),
-  ...LOTES_COMPARTIDOS,
+  ...CORRALES_COMPARTIDOS,
+  ...CORRALES_GUAYASCATE,
 ];
 const MESES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 const todayStr = () => new Date().toISOString().split("T")[0];
